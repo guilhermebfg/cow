@@ -24,6 +24,7 @@ def install_cowsay():
 
 def customize(cow_animals_file, cow_frases_file):
     """Customiza o cowsay."""
+    os.system('mkdir ~/.cow')
     cow_animals = open(cow_animals_file, "a+")
     cow_frases = open(cow_frases_file, "a+")
     for i in range(len(animals)):
@@ -39,7 +40,7 @@ def customize(cow_animals_file, cow_frases_file):
             cow_frases.write(frase)
             custom = raw_input('deseja colocar mais uma frase? (y/n)\n')
             if custom == 'y':
-                frases.write('\n')
+                cow_frases.write('\n')
             else:
                 break
         fortune = False
